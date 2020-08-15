@@ -12,4 +12,6 @@ void insertionSort(int numbers[], int array_size){
     }
     numbers[j] = index;
   }
+  
+  printf("Count is: %d\n", cnt);
 }

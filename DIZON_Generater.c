@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include "insertion.c"
 
 void GenerateData(int array[], int n){
 
@@ -33,19 +33,30 @@ void PrintData(int array[], int n){
 
 int main() {
 	
-	int A[1024];
-	int B[2048];
-	int C[4096];
+	int *A;
+	int x = 24, y = 48, z = 96;
+	
+	A = (int *)malloc(sizeof(int) * x);
+	GenerateData(A, x);
+	PrintData(A, x);
+	insertionSort(A, x);
+	PrintData(A, x);
+
+	free(A);
+	A = (int *)malloc(sizeof(int) * z);
+	
+	GenerateData(A, z);
+	PrintData(A, z);
+
+	free(A);
+
+	A = (int *)malloc(sizeof(int) * y);
+	
+	GenerateData(A, y);
+	PrintData(A, y);
 	
 	
-	GenerateData(A, 1024);
-	GenerateData(B, 2048);
-	GenerateData(C, 4096);
-	
-	
-	PrintData(A, 1024);
-	PrintData(B, 2048);
-	PrintData(C, 4096);
+	free(A);
 	
 	
 	return 0;
