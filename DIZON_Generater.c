@@ -39,9 +39,8 @@ void CopyData(int A[], int B[], int N){
 	
 }
 
-unsigned long long iSortTime(int array[], int size){
+unsigned long long iSortTime(int array[], int size, double *elapsedTime){
 	long seconds, nanoseconds;
-	double elapsed = 0;
 	struct timespec begin, end; 
 	unsigned long long insertionCnt = 0;
 		
@@ -58,14 +57,13 @@ unsigned long long iSortTime(int array[], int size){
 	#endif
 	    seconds = end.tv_sec - begin.tv_sec;
 	    nanoseconds = end.tv_nsec - begin.tv_nsec;
-	    elapsed += seconds + nanoseconds*1e-9;
+	    *elapsedTime += seconds + nanoseconds*1e-9;
 	
 	return insertionCnt;
 }
 
-unsigned long long hSortTime(int array[], int size){
+unsigned long long hSortTime(int array[], int size, double *elapsedTime){
 	long seconds, nanoseconds;
-	double elapsed = 0;
 	unsigned long long heapCnt = 0;
 	struct timespec begin, end; 
 
@@ -83,7 +81,7 @@ unsigned long long hSortTime(int array[], int size){
 	#endif
 	    seconds = end.tv_sec - begin.tv_sec;
 	    nanoseconds = end.tv_nsec - begin.tv_nsec;
-	    elapsed += seconds + nanoseconds*1e-9;
+	    *elapsedTime += seconds + nanoseconds*1e-9;
 	
 	return heapCnt;
 
@@ -95,6 +93,8 @@ int main() {
 	
 	int *mainData, *tempData;
 	int i, j; 
+	double elapsedTime[6];
+	
 		
 	unsigned long long insertionCnt, heapCnt;
 	int n = 1024; /// data size start
@@ -117,9 +117,9 @@ int main() {
 		for(j = 0; j <  10; j++){
 		//	printf("Trial %d for data size %d:\n", j+1, n);
 			CopyData(mainData, tempData, n);
-			insertionCnt += iSortTime(tempData, n);
+			insertionCnt += iSortTime(tempData, n, &elapsedTime[0]);
 			CopyData(mainData, tempData, n);
-			heapCnt += hSortTime(tempData, n);
+			heapCnt += hSortTime(tempData, n, &elapsedTime[1]);
 		    
 //			    printf("CPU Time measured: %lf in seconds.\n", elapsed);
 //			    printf("CPU Time measured: %lf in milliseconds.\n", elapsed * 1000);			
@@ -132,7 +132,8 @@ int main() {
 		
 		//Average Time
 		printf("\nAVERAGE Time: \n");
-//		printf("Insertion Time: %lf in seconds\n", elapsed / 10.0);
+		printf("Insertion Time: %lf in seconds\n", elapsedTime[0] / 10.0);
+		printf("Heap Time: %lf in seconds\n\n", elapsedTime[1] / 10.0);
 
 		
 	}	
