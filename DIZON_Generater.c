@@ -39,11 +39,11 @@ void CopyData(int A[], int B[], int N){
 	
 }
 
-long long iSortTime(int array[], int size){
+unsigned long long iSortTime(int array[], int size){
 	long seconds, nanoseconds;
 	double elapsed = 0;
 	struct timespec begin, end; 
-	long long insertionCnt = 0;
+	unsigned long long insertionCnt = 0;
 		
 	#if CPU_TIME
 	    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &begin);
@@ -63,10 +63,10 @@ long long iSortTime(int array[], int size){
 	return insertionCnt;
 }
 
-long long hSortTime(int array[], int size){
+unsigned long long hSortTime(int array[], int size){
 	long seconds, nanoseconds;
 	double elapsed = 0;
-	long long heapCnt = 0;
+	unsigned long long heapCnt = 0;
 	struct timespec begin, end; 
 
 		
@@ -96,7 +96,7 @@ int main() {
 	int *mainData, *tempData;
 	int i, j; 
 		
-	long long insertionCnt, heapCnt;
+	unsigned long long insertionCnt, heapCnt;
 	int n = 1024; /// data size start
 	srand((signed) time(NULL)); // Generate Data Initialization
 	
