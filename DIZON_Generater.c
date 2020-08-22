@@ -6,10 +6,6 @@
 #include "insertion.c"
 #include "heap.c"
 
-
-
-
-
 void GenerateData(int array[], int n){
 
 	int i = 0;
@@ -41,67 +37,92 @@ void CopyData(int A[], int B[], int N){
 	for(i = 0; i < N; i++)
 		B[i] = A[i];
 	
+}
+
+long long iSortTime(int array[], int size){
+	long seconds, nanoseconds;
+	double elapsed = 0;
+	struct timespec begin, end; 
+	long long insertionCnt = 0;
+		
+	#if CPU_TIME
+	    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &begin);
+	#else
+	    clock_gettime(CLOCK_REALTIME, &begin);
+	#endif    		
+		insertionCnt = insertionSort(array, size);   // <------ Insertion Sort
+	#if CPU_TIME 
+	    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &end);   
+	#else
+	   clock_gettime(CLOCK_REALTIME, &end);
+	#endif
+	    seconds = end.tv_sec - begin.tv_sec;
+	    nanoseconds = end.tv_nsec - begin.tv_nsec;
+	    elapsed += seconds + nanoseconds*1e-9;
 	
+	return insertionCnt;
+}
+
+long long hSortTime(int array[], int size){
+	long seconds, nanoseconds;
+	double elapsed = 0;
+	long long heapCnt = 0;
+	struct timespec begin, end; 
+
+		
+	#if CPU_TIME
+	    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &begin);
+	#else
+	    clock_gettime(CLOCK_REALTIME, &begin);
+	#endif    		
+		heapCnt = heapSort(array, size);   // <------ Insertion Sort
+	#if CPU_TIME 
+	    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &end);   
+	#else
+	   clock_gettime(CLOCK_REALTIME, &end);
+	#endif
+	    seconds = end.tv_sec - begin.tv_sec;
+	    nanoseconds = end.tv_nsec - begin.tv_nsec;
+	    elapsed += seconds + nanoseconds*1e-9;
 	
+	return heapCnt;
+
 }
 
 
 
 int main() {
 	
-	int *A, *B;
+	int *mainData, *tempData;
 	int i, j; 
-	long seconds, nanoseconds;
-	double elapsed = 0;
 		
-	double insertionCnt, heapCnt;
-	struct timespec begin, end; 
-	
+	long long insertionCnt, heapCnt;
 	int n = 1024; /// data size start
 	srand((signed) time(NULL)); // Generate Data Initialization
 	
-	A = (int *)malloc(sizeof(int) * n); //Merge Sort
-	B = (int *)malloc(sizeof(int) * n); //Heap Sort
+	mainData = (int *)malloc(sizeof(int) * n); //Merge Sort
+	tempData = (int *)malloc(sizeof(int) * n); //Heap Sort
 	
 
 	for(n = 1024; n < 500000; n*=2){
 		printf("%d DATA SIZE:\n", n);
-		A = (int *) realloc(A, sizeof(int) * n); //Insertion
-		B = (int *) realloc(B, sizeof(int) * n); // Heap
+		mainData = (int *) realloc(mainData, sizeof(int) * n);
+		tempData = (int *) realloc(tempData, sizeof(int) * n);
 	
 		insertionCnt = 0;
 		heapCnt = 0;
 	
 	// Number of Trials per Data Size
+		GenerateData(mainData, n);
 		for(j = 0; j <  10; j++){
 		//	printf("Trial %d for data size %d:\n", j+1, n);
-			
-			GenerateData(A, n);
-			CopyData(A, B, n);
-			
-			
-			#if CPU_TIME
-			    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &begin);
-			#else
-			    clock_gettime(CLOCK_REALTIME, &begin);
-			#endif    		
-				insertionCnt += insertionSort(A, n);   // <------ Insertion Sort
-			#if CPU_TIME 
-			    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &end);   
-			#else
-			   clock_gettime(CLOCK_REALTIME, &end);
-			#endif
-			    seconds = end.tv_sec - begin.tv_sec;
-			    nanoseconds = end.tv_nsec - begin.tv_nsec;
-			    elapsed += seconds + nanoseconds*1e-9;
-			    
+			CopyData(mainData, tempData, n);
+			insertionCnt += iSortTime(tempData, n);
+			CopyData(mainData, tempData, n);
+			heapCnt += hSortTime(tempData, n);
+		    
 //			    printf("CPU Time measured: %lf in seconds.\n", elapsed);
 //			    printf("CPU Time measured: %lf in milliseconds.\n", elapsed * 1000);			
-			
-			
-			
-			
-			heapCnt += heapSort(B, n);
 		}
 
 		//Average Count
@@ -111,13 +132,13 @@ int main() {
 		
 		//Average Time
 		printf("\nAVERAGE Time: \n");
-		printf("Insertion Time: %lf in seconds\n", elapsed / 10.0);
+//		printf("Insertion Time: %lf in seconds\n", elapsed / 10.0);
 
 		
 	}	
 
-		free(A);
-		free(B);
+		free(mainData);
+		free(tempData);
 	
 	return 0;
 }
