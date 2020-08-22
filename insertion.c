@@ -1,8 +1,9 @@
-void insertionSort(int numbers[], int array_size){
-  int i, j, index, cnt = 0;
+int insertionSort(int numbers[], int array_size){
+  int i, j, index;
+  
+  long int cnt = 0;
   
   for (i = 1; i < array_size; i++){
-	cnt++;
     index = numbers[i];
     j = i;
     while ((j > 0) && (numbers[j - 1] > index)){
@@ -13,5 +14,6 @@ void insertionSort(int numbers[], int array_size){
     numbers[j] = index;
   }
   
-  printf("Count is: %d\n", cnt);
+  printf("Insertion Count: %ld\n", cnt);
+  return cnt;
 }

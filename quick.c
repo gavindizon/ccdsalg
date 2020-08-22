@@ -10,6 +10,7 @@ void q_sort(int numbers[], int left, int right){
   r_hold = right;
   pivot = numbers[left];
   
+  
   while (left < right){
     while ((numbers[right] >= pivot) && (left < right))
       right--;
