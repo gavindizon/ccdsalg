@@ -45,7 +45,7 @@ int heapSort(int numbers[], int array_size){
     siftDown(numbers, 0, i-1, &cnt);
   }
   
-  printf("Heap Count: %ld\n", cnt);
+//  printf("Heap Count: %ld\n", cnt);
 	return cnt;
 }
 
