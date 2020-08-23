@@ -44,17 +44,10 @@ unsigned long long iSortTime(int array[], int size, double *elapsedTime){
 	struct timespec begin, end; 
 	unsigned long long insertionCnt = 0;
 		
-	#if CPU_TIME
 	    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &begin);
-	#else
-	    clock_gettime(CLOCK_REALTIME, &begin);
-	#endif    		
 		insertionCnt = insertionSort(array, size);   // <------ Insertion Sort
-	#if CPU_TIME 
 	    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &end);   
-	#else
-	   clock_gettime(CLOCK_REALTIME, &end);
-	#endif
+
 	    seconds = end.tv_sec - begin.tv_sec;
 	    nanoseconds = end.tv_nsec - begin.tv_nsec;
 	    *elapsedTime += seconds + nanoseconds*1e-9;
@@ -68,17 +61,10 @@ unsigned long long hSortTime(int array[], int size, double *elapsedTime){
 	struct timespec begin, end; 
 
 		
-	#if CPU_TIME
 	    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &begin);
-	#else
-	    clock_gettime(CLOCK_REALTIME, &begin);
-	#endif    		
 		heapCnt = heapSort(array, size);   // <------ Insertion Sort
-	#if CPU_TIME 
 	    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &end);   
-	#else
-	   clock_gettime(CLOCK_REALTIME, &end);
-	#endif
+
 	    seconds = end.tv_sec - begin.tv_sec;
 	    nanoseconds = end.tv_nsec - begin.tv_nsec;
 	    *elapsedTime += seconds + nanoseconds*1e-9;
@@ -117,9 +103,9 @@ int main() {
 		for(j = 0; j <  10; j++){
 		//	printf("Trial %d for data size %d:\n", j+1, n);
 			CopyData(mainData, tempData, n);
-			insertionCnt += iSortTime(tempData, n, &elapsedTime[0]);
+			insertionCnt = iSortTime(tempData, n, &elapsedTime[0]);
 			CopyData(mainData, tempData, n);
-			heapCnt += hSortTime(tempData, n, &elapsedTime[1]);
+			heapCnt = hSortTime(tempData, n, &elapsedTime[1]);
 		    
 //			    printf("CPU Time measured: %lf in seconds.\n", elapsed);
 //			    printf("CPU Time measured: %lf in milliseconds.\n", elapsed * 1000);			
@@ -127,8 +113,8 @@ int main() {
 
 		//Average Count
 		printf("\nAVERAGE Count: \n");
-		printf("Insertion Count: %.3f\n", insertionCnt / 10.0);
-		printf("Heap Count: %.3f\n", heapCnt / 10.0);
+		printf("Insertion Count: %lld\n", insertionCnt);
+		printf("Heap Count: %lld\n", heapCnt);
 		
 		//Average Time
 		printf("\nAVERAGE Time: \n");
