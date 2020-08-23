@@ -1,0 +1,402 @@
+BUBBLE SORT TEST # 1 N = 1024
+counter: 523776
+Result: 0.00000000000000000000
+CPU Time measured: 0.007710 in seconds.
+CPU Time measured: 7.710287 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 2 N = 1024
+counter: 523776
+Result: 0.00000000000000000000
+CPU Time measured: 0.006236 in seconds.
+CPU Time measured: 6.236074 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 3 N = 1024
+counter: 523776
+Result: 0.00000000000000000000
+CPU Time measured: 0.004251 in seconds.
+CPU Time measured: 4.250585 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 4 N = 1024
+counter: 523776
+Result: 0.00000000000000000000
+CPU Time measured: 0.003935 in seconds.
+CPU Time measured: 3.934626 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 5 N = 1024
+counter: 523776
+Result: 0.00000000000000000000
+CPU Time measured: 0.004223 in seconds.
+CPU Time measured: 4.222605 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 6 N = 1024
+counter: 523776
+Result: 0.00000000000000000000
+CPU Time measured: 0.003681 in seconds.
+CPU Time measured: 3.680817 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 7 N = 1024
+counter: 523776
+Result: 0.00000000000000000000
+CPU Time measured: 0.003978 in seconds.
+CPU Time measured: 3.978210 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 8 N = 1024
+counter: 523776
+Result: 0.00000000000000000000
+CPU Time measured: 0.003524 in seconds.
+CPU Time measured: 3.523926 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 9 N = 1024
+counter: 523776
+Result: 0.00000000000000000000
+CPU Time measured: 0.004941 in seconds.
+CPU Time measured: 4.941010 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 10 N = 1024
+counter: 523776
+Result: 0.00000000000000000000
+CPU Time measured: 0.006334 in seconds.
+CPU Time measured: 6.333686 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 1 N = 2048
+counter: 2096128
+Result: 0.00000000000000000000
+CPU Time measured: 0.016646 in seconds.
+CPU Time measured: 16.645700 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 2 N = 2048
+counter: 2096128
+Result: 0.00000000000000000000
+CPU Time measured: 0.020017 in seconds.
+CPU Time measured: 20.016804 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 3 N = 2048
+counter: 2096128
+Result: 0.00000000000000000000
+CPU Time measured: 0.015925 in seconds.
+CPU Time measured: 15.924960 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 4 N = 2048
+counter: 2096128
+Result: 0.00000000000000000000
+CPU Time measured: 0.017832 in seconds.
+CPU Time measured: 17.832457 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 5 N = 2048
+counter: 2096128
+Result: 0.00000000000000000000
+CPU Time measured: 0.015970 in seconds.
+CPU Time measured: 15.970167 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 6 N = 2048
+counter: 2096128
+Result: 0.00000000000000000000
+CPU Time measured: 0.021699 in seconds.
+CPU Time measured: 21.699272 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 7 N = 2048
+counter: 2096128
+Result: 0.00000000000000000000
+CPU Time measured: 0.021790 in seconds.
+CPU Time measured: 21.789630 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 8 N = 2048
+counter: 2096128
+Result: 0.00000000000000000000
+CPU Time measured: 0.021823 in seconds.
+CPU Time measured: 21.822729 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 9 N = 2048
+counter: 2096128
+Result: 0.00000000000000000000
+CPU Time measured: 0.021250 in seconds.
+CPU Time measured: 21.249509 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 10 N = 2048
+counter: 2096128
+Result: 0.00000000000000000000
+CPU Time measured: 0.018762 in seconds.
+CPU Time measured: 18.761724 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 1 N = 4096
+counter: 8386560
+Result: 0.00000000000000000000
+CPU Time measured: 0.095923 in seconds.
+CPU Time measured: 95.923299 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 2 N = 4096
+counter: 8386560
+Result: 0.00000000000000000000
+CPU Time measured: 0.098607 in seconds.
+CPU Time measured: 98.606745 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 3 N = 4096
+counter: 8386560
+Result: 0.00000000000000000000
+CPU Time measured: 0.097073 in seconds.
+CPU Time measured: 97.072872 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 4 N = 4096
+counter: 8386560
+Result: 0.00000000000000000000
+CPU Time measured: 0.096220 in seconds.
+CPU Time measured: 96.220106 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 5 N = 4096
+counter: 8386560
+Result: 0.00000000000000000000
+CPU Time measured: 0.070336 in seconds.
+CPU Time measured: 70.336102 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 6 N = 4096
+counter: 8386560
+Result: 0.00000000000000000000
+CPU Time measured: 0.071350 in seconds.
+CPU Time measured: 71.349554 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 7 N = 4096
+counter: 8386560
+Result: 0.00000000000000000000
+CPU Time measured: 0.074478 in seconds.
+CPU Time measured: 74.478244 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 8 N = 4096
+counter: 8386560
+Result: 0.00000000000000000000
+CPU Time measured: 0.069876 in seconds.
+CPU Time measured: 69.875660 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 9 N = 4096
+counter: 8386560
+Result: 0.00000000000000000000
+CPU Time measured: 0.072062 in seconds.
+CPU Time measured: 72.062441 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 10 N = 4096
+counter: 8386560
+Result: 0.00000000000000000000
+CPU Time measured: 0.070833 in seconds.
+CPU Time measured: 70.832706 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 1 N = 8192
+counter: 33550336
+Result: 0.00000000000000000000
+CPU Time measured: 0.315903 in seconds.
+CPU Time measured: 315.902838 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 2 N = 8192
+counter: 33550336
+Result: 0.00000000000000000000
+CPU Time measured: 0.311396 in seconds.
+CPU Time measured: 311.395871 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 3 N = 8192
+counter: 33550336
+Result: 0.00000000000000000000
+CPU Time measured: 0.313727 in seconds.
+CPU Time measured: 313.726727 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 4 N = 8192
+counter: 33550336
+Result: 0.00000000000000000000
+CPU Time measured: 0.309518 in seconds.
+CPU Time measured: 309.518140 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 5 N = 8192
+counter: 33550336
+Result: 0.00000000000000000000
+CPU Time measured: 0.321141 in seconds.
+CPU Time measured: 321.141407 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 6 N = 8192
+counter: 33550336
+Result: 0.00000000000000000000
+CPU Time measured: 0.329643 in seconds.
+CPU Time measured: 329.643314 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 7 N = 8192
+counter: 33550336
+Result: 0.00000000000000000000
+CPU Time measured: 0.358616 in seconds.
+CPU Time measured: 358.615741 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 8 N = 8192
+counter: 33550336
+Result: 0.00000000000000000000
+CPU Time measured: 0.316017 in seconds.
+CPU Time measured: 316.017488 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 9 N = 8192
+counter: 33550336
+Result: 0.00000000000000000000
+CPU Time measured: 0.321228 in seconds.
+CPU Time measured: 321.228238 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 10 N = 8192
+counter: 33550336
+Result: 0.00000000000000000000
+CPU Time measured: 0.314330 in seconds.
+CPU Time measured: 314.330487 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 1 N = 16384
+counter: 134209536
+Result: 0.00000000000000000000
+CPU Time measured: 1.316634 in seconds.
+CPU Time measured: 1316.634090 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 2 N = 16384
+counter: 134209536
+Result: 0.00000000000000000000
+CPU Time measured: 1.335836 in seconds.
+CPU Time measured: 1335.835581 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 3 N = 16384
+counter: 134209536
+Result: 0.00000000000000000000
+CPU Time measured: 1.424539 in seconds.
+CPU Time measured: 1424.539288 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 4 N = 16384
+counter: 134209536
+Result: 0.00000000000000000000
+CPU Time measured: 1.379752 in seconds.
+CPU Time measured: 1379.752256 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 5 N = 16384
+counter: 134209536
+Result: 0.00000000000000000000
+CPU Time measured: 1.454176 in seconds.
+CPU Time measured: 1454.175861 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 6 N = 16384
+counter: 134209536
+Result: 0.00000000000000000000
+CPU Time measured: 1.390723 in seconds.
+CPU Time measured: 1390.722511 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 7 N = 16384
+counter: 134209536
+Result: 0.00000000000000000000
+CPU Time measured: 1.453181 in seconds.
+CPU Time measured: 1453.181003 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 8 N = 16384
+counter: 134209536
+Result: 0.00000000000000000000
+CPU Time measured: 1.371687 in seconds.
+CPU Time measured: 1371.686612 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 9 N = 16384
+counter: 134209536
+Result: 0.00000000000000000000
+CPU Time measured: 1.376844 in seconds.
+CPU Time measured: 1376.844154 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 10 N = 16384
+counter: 134209536
+Result: 0.00000000000000000000
+CPU Time measured: 1.374858 in seconds.
+CPU Time measured: 1374.857593 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 1 N = 32768
+counter: 536854528
+Result: 0.00000000000000000000
+CPU Time measured: 5.875404 in seconds.
+CPU Time measured: 5875.404409 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 2 N = 32768
+counter: 536854528
+Result: 0.00000000000000000000
+CPU Time measured: 5.635991 in seconds.
+CPU Time measured: 5635.991188 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 3 N = 32768
+counter: 536854528
+Result: 0.00000000000000000000
+CPU Time measured: 6.043705 in seconds.
+CPU Time measured: 6043.704650 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 4 N = 32768
+counter: 536854528
+Result: 0.00000000000000000000
+CPU Time measured: 6.293942 in seconds.
+CPU Time measured: 6293.941657 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 5 N = 32768
+counter: 536854528
+Result: 0.00000000000000000000
+CPU Time measured: 5.858395 in seconds.
+CPU Time measured: 5858.394984 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 6 N = 32768
+counter: 536854528
+Result: 0.00000000000000000000
+CPU Time measured: 6.095318 in seconds.
+CPU Time measured: 6095.317558 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 7 N = 32768
+counter: 536854528
+Result: 0.00000000000000000000
+CPU Time measured: 6.099647 in seconds.
+CPU Time measured: 6099.647238 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 8 N = 32768
+counter: 536854528
+Result: 0.00000000000000000000
+CPU Time measured: 7.080023 in seconds.
+CPU Time measured: 7080.023412 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 9 N = 32768
+counter: 536854528
+Result: 0.00000000000000000000
+CPU Time measured: 7.766336 in seconds.
+CPU Time measured: 7766.335708 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 10 N = 32768
+counter: 536854528
+Result: 0.00000000000000000000
+CPU Time measured: 6.688159 in seconds.
+CPU Time measured: 6688.159340 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 1 N = 65536
+counter: 2147450880
+Result: 0.00000000000000000000
+CPU Time measured: 24.844436 in seconds.
+CPU Time measured: 24844.435508 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 2 N = 65536
+counter: 2147450880
+Result: 0.00000000000000000000
+CPU Time measured: 22.486856 in seconds.
+CPU Time measured: 22486.856446 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 3 N = 65536
+counter: 2147450880
+Result: 0.00000000000000000000
+CPU Time measured: 22.773890 in seconds.
+CPU Time measured: 22773.890229 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 4 N = 65536
+counter: 2147450880
+Result: 0.00000000000000000000
+CPU Time measured: 22.587705 in seconds.
+CPU Time measured: 22587.705037 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 5 N = 65536
+counter: 2147450880
+Result: 0.00000000000000000000
+CPU Time measured: 22.505446 in seconds.
+CPU Time measured: 22505.445532 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 6 N = 65536
+counter: 2147450880
+Result: 0.00000000000000000000
+CPU Time measured: 22.243040 in seconds.
+CPU Time measured: 22243.039742 in milliseconds.
+------------------------------------------------------------------------------
+BUBBLE SORT TEST # 7 N = 65536
+counter: 2147450880
+Result: 0.00000000000000000000
+CPU Time measured: 22.010257 in seconds.
+CPU Time measured: 22010.256991 in milliseconds.
+--------------------
