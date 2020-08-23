@@ -29,6 +29,7 @@ void siftDown(int numbers[], int root, int bottom, long int * cnt){
   }
 }
 
+
 int heapSort(int numbers[], int array_size){
   int i, temp;
   long int cnt = 0;

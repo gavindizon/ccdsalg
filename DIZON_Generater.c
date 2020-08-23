@@ -6,6 +6,7 @@
 #include "insertion.c"
 #include "heap.c"
 
+
 void GenerateData(int array[], int n){
 
 	int i = 0;
