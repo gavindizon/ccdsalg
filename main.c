@@ -126,7 +126,7 @@ unsigned long long qSortTime (int array[], int size, double *elapsedTime) {
 
 		
 	    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &begin);
-		quickCnt = heapSort(array, size);   // <------ Insertion Sort
+		quickCnt = quickSort(array, size);   
 	    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &end);   
 
 	    seconds = end.tv_sec - begin.tv_sec;
