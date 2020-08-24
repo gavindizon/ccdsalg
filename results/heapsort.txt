@@ -1,0 +1,5 @@
+N: 1024 || counter: 9705 || Average MET: 0.000000
+N: 2048 || counter: 21384 || Average MET: 0.000000
+N: 1024 || counter: 9679 || Average MET: 0.000000
+N: 2048 || counter: 21444 || Average MET: 0.000000
+N: 4096 || counter: 46897 || Average MET: 0.000000
