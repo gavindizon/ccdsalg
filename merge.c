@@ -1,80 +1,85 @@
-void m_sort(int numbers[], int temp[], int left, int right, unsigned long long int *ctr);
-void merge(int numbers[], int temp[], int left, int mid, int right,unsigned long long int *ctr);
-
-unsigned long long mergeSort(int numbers[], int temp[], int array_size)
-{
-      unsigned long long int ctr = 0;
-      m_sort(numbers, temp, 0, array_size - 1, &ctr);
-
-      return ctr;
+#include <stdio.h> 
+#include <stdlib.h> 
+  
+// Merges two subarrays of arr[]. 
+// First subarray is arr[l..m] 
+// Second subarray is arr[m+1..r] 
+void merge(int arr[], int l, int m, int r, unsigned long long * ctr) 
+{ 
+    int i, j, k; 
+    int n1 = m - l + 1; 
+    int n2 = r - m; 
+  
+    /* create temp arrays */
+    int L[n1], R[n2]; 
+  
+    /* Copy data to temp arrays L[] and R[] */
+    for (i = 0; i < n1; i++) 
+        L[i] = arr[l + i]; 
+    for (j = 0; j < n2; j++) 
+        R[j] = arr[m + 1 + j]; 
+  
+    /* Merge the temp arrays back into arr[l..r]*/
+    i = 0; // Initial index of first subarray 
+    j = 0; // Initial index of second subarray 
+    k = l; // Initial index of merged subarray 
+    while (i < n1 && j < n2) { 
+        (*ctr)++;
+        if (L[i] <= R[j]) { 
+            arr[k] = L[i]; 
+            i++; 
+        } 
+        else { 
+            arr[k] = R[j]; 
+            j++; 
+        } 
+        k++; 
+    } 
+  
+    /* Copy the remaining elements of L[], if there 
+       are any */
+    while (i < n1) {
+	    (*ctr)++;
+        arr[k] = L[i]; 
+        i++; 
+        k++; 
+    } 
+  
+    /* Copy the remaining elements of R[], if there 
+       are any */
+    while (j < n2) {
+	    (*ctr)++;
+        arr[k] = R[j]; 
+        j++; 
+        k++; 
+    } 
+} 
+  
+/* l is for left index and r is right index of the 
+   sub-array of arr to be sorted */
+void mergeSort(int arr[], int l, int r, unsigned long long * ctr) 
+{ 
+    if (l < r) { 
+        (*ctr)++;
+		// Same as (l+r)/2, but avoids overflow for 
+  
+        // large l and h 
+        int m = l + (r - l) / 2; 
+  
+        // Sort first and second halves 
+        mergeSort(arr, l, m, ctr); 
+        mergeSort(arr, m + 1, r, ctr); 
+  
+        merge(arr, l, m, r, ctr); 
+    } 
 }
 
-void m_sort(int numbers[], int temp[], int left, int right, unsigned long long int *ctr)
-{
-      int mid;
 
-      if (right > left)
-      {
-            (*ctr)++;
-
-            mid = (right + left) / 2;
-            m_sort(numbers, temp, left, mid, ctr);
-            m_sort(numbers, temp, mid + 1, right, ctr);
-            merge(numbers, temp, left, mid + 1, right, ctr);
-      }
-}
-
-void merge(int numbers[], int temp[], int left, int mid, int right, unsigned long long int *ctr)
-{
-
-      int i, left_end, num_elements, tmp_pos;
-      left_end = mid - 1;
-      tmp_pos = left;
-      num_elements = right - left + 1;
-      // (*ctr)++;
-      while ((left <= left_end) && (mid <= right))
-      {
-
-            (*ctr)++;
-            if (numbers[left] <= numbers[mid])
-            {
-                  temp[tmp_pos] = numbers[left];
-                  tmp_pos = tmp_pos + 1;
-                  left = left + 1;
-            }
-            else
-            {
-                  temp[tmp_pos] = numbers[mid];
-                  tmp_pos = tmp_pos + 1;
-                  mid = mid + 1;
-            }
-      }
-
-
-      while (left <= left_end)
-      {
-
-            (*ctr)++;
-            temp[tmp_pos] = numbers[left];
-            left = left + 1;
-            tmp_pos = tmp_pos + 1;
-      }
-
-
-      while (mid <= right)
-      {
-
-            (*ctr)++;
-            temp[tmp_pos] = numbers[mid];
-            mid = mid + 1;
-            tmp_pos = tmp_pos + 1;
-      }
-
-
-      for (i = 0; i <= num_elements; i++)
-      {
-            // (*ctr)++;
-            numbers[right] = temp[right];
-            right = right - 1;
-      }
+unsigned long long rMergeSort(int arr[], int l, int r){
+	
+	unsigned long long ctr = 0;
+	
+	mergeSort(arr, l, r, &ctr);
+	
+	return ctr;
 }

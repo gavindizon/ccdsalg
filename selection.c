@@ -1,5 +1,5 @@
-int selectionSort(int numbers[], int array_size) {	// ADD
-	long int count = 0;	// ADD
+unsigned long long selectionSort(int numbers[], int array_size) {	// ADD
+	unsigned long long count = 0;	// ADD
 	int i, j;
 	int min, temp;
 

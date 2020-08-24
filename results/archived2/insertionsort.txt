@@ -1,0 +1,9 @@
+N: 1024 || counter: 253032 || Average MET: 0.000000
+N: 2048 || counter: 1024073 || Average MET: 0.003125
+N: 4096 || counter: 4127940 || Average MET: 0.011250
+N: 8192 || counter: 16673202 || Average MET: 0.052687
+N: 16384 || counter: 67127488 || Average MET: 0.203706
+N: 32768 || counter: 268240026 || Average MET: 0.837558
+N: 65536 || counter: 1069975320 || Average MET: 3.335318
+N: 131072 || counter: 4277631799 || Average MET: 13.183532
+N: 262144 || counter: 4274882459 || Average MET: 52.727728
