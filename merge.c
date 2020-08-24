@@ -1,7 +1,7 @@
 void m_sort(int numbers[], int temp[], int left, int right, unsigned long long int *ctr);
 void merge(int numbers[], int temp[], int left, int mid, int right,unsigned long long int *ctr);
 
-int mergeSort(int numbers[], int temp[], int array_size)
+unsigned long long mergeSort(int numbers[], int temp[], int array_size)
 {
       unsigned long long int ctr = 0;
       m_sort(numbers, temp, 0, array_size - 1, &ctr);

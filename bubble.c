@@ -1,4 +1,4 @@
-int bubbleSort(int numbers[], int array_size)
+unsigned long long bubbleSort(int numbers[], int array_size)
 {
   int i, j, temp;
   unsigned long long int ctr = 0;

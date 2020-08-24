@@ -16,14 +16,14 @@
 typedef char String[52];
 
 
-void CopyData(int *A, int *B, int N){
+void CopyData(int A[], int B[], int N){
     int i;
     for (i = 0; i < N; i++){
         B[i] = A[i];
     }
 }
 
-unsigned long long bSortTime(int *A, int N, double *cpuTime){
+unsigned long long bSortTime(int A[], int N, double *cpuTime){
     unsigned long long ctr; 
 
     // Start measuring time
@@ -47,7 +47,7 @@ unsigned long long bSortTime(int *A, int N, double *cpuTime){
     return ctr;
 }
 
-unsigned long long mSortTime(int *A, int *temp, int N, double *cpuTime){
+unsigned long long mSortTime(int A[], int temp[], int N, double *cpuTime){
     unsigned long long ctr; 
     // Start measuring time
     struct timespec begin, end; 
@@ -140,7 +140,7 @@ int main()
     int *mainData, *tempData, *tempMerge;
     int N = START, M;
     int i;
-    unsigned long long counters[6]; // change niyo na lang to 6 if pinagsama sama na 
+    unsigned long counters[6]; // change niyo na lang to 6 if pinagsama sama na 
     double cpuTimes[6] = {0, 0, 0, 0, 0, 0};
     String filenames[6] = { "results/bubblesort.txt", "results/mergesort.txt","results/insertionsort.txt","results/heapsort.txt", "results/selectionsort.txt", "results/quicksort.txt" };
     FILE *fp;
@@ -149,38 +149,34 @@ int main()
     tempData = malloc(N * sizeof(int));
     tempMerge = malloc(N * sizeof(int));
     GenerateData(mainData, N);
-	srand((signed) time(NULL)); // Generate Data Initialization
+	srand((unsigned) time(NULL)); // Generate Data Initialization
     
     for(N = START; N < MAX; N*=2){
-        mainData = realloc(mainData, N * sizeof(int));
-        tempData = realloc(tempData, N * sizeof(int));
-        tempMerge = realloc(tempMerge, N * sizeof(int));
+    	printf("Executing at Data Size : %d... \n", N);
+        mainData = (int *) realloc(mainData, N * sizeof(int));
+        tempData = (int *) realloc(tempData, N * sizeof(int));
+        tempMerge = (int *) realloc(tempMerge, N * sizeof(int));
 
         GenerateData(mainData, N);
 
         for(M = 1; M <= 10; M++){
-            CopyData(mainData, tempData, N);
-            counters[0] = bSortTime(tempData, N, &cpuTimes[0]);
-            CopyData(mainData, tempData, N);
-			counters[1] = mSortTime(tempData, tempMerge, N, &cpuTimes[1]);
+//            CopyData(mainData, tempData, N);
+//            counters[0] = bSortTime(tempData, N, &cpuTimes[0]);
+ //           CopyData(mainData, tempData, N);
+//			counters[1] = mSortTime(tempData, tempMerge, N, &cpuTimes[1]);
             CopyData(mainData, tempData, N);
             counters[2] = iSortTime(tempData, N, &cpuTimes[2]);
             CopyData(mainData, tempData, N);
 			counters[3] = hSortTime(tempData, N, &cpuTimes[3]);
             CopyData(mainData, tempData, N);
-            counters[4] = iSortTime(tempData, N, &cpuTimes[4]);
+            counters[4] = sSortTime(tempData, N, &cpuTimes[4]);
             CopyData(mainData, tempData, N);
-			counters[5] = hSortTime(tempData, N, &cpuTimes[5]);
+			counters[5] = qSortTime(tempData, N, &cpuTimes[5]);
 
         }
-        cpuTimes[0] /= 10;
-        cpuTimes[1] /= 10;
-        cpuTimes[2] /= 10;
-        cpuTimes[3] /= 10;
-        cpuTimes[4] /= 10;
-        cpuTimes[5] /= 10;
 
-        for(i = 0; i < 6; i++){
+        for(i = 2; i < 6; i++){
+	        cpuTimes[i] /= 10;
             if((fp = fopen(filenames[i], "a"))!=NULL){
                 fprintf(fp,"N: %d || counter: %llu || Average MET: %lf\n", N, counters[i], cpuTimes[i]);
             }
@@ -192,6 +188,8 @@ int main()
 
 
     }
+
+	printf("\n\nProgram Successfully Terminated\n\n");
     free(mainData);
     free(tempData);
     free(tempMerge);

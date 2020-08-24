@@ -1,6 +1,6 @@
 
 
-void siftDown(int numbers[], int root, int bottom, long int * cnt){
+void siftDown(int numbers[], int root, int bottom, unsigned long long * cnt){
   int done, maxChild, temp;
 	
   done = 0;
@@ -30,9 +30,9 @@ void siftDown(int numbers[], int root, int bottom, long int * cnt){
 }
 
 
-int heapSort(int numbers[], int array_size){
+unsigned long long heapSort(int numbers[], int array_size){
   int i, temp;
-  long int cnt = 0;
+  unsigned long long cnt = 0;
 
   for (i = (array_size / 2)-1; i >= 0; i--){
     siftDown(numbers, i, array_size, &cnt);

@@ -1,4 +1,4 @@
-void q_sort(int numbers[], int left, int right, long int* count) {	// ADD
+void q_sort(int numbers[], int left, int right, unsigned long long* count) {	// ADD
 	int pivot, l_hold, r_hold;
 
 	l_hold = left;
@@ -44,8 +44,8 @@ void q_sort(int numbers[], int left, int right, long int* count) {	// ADD
 
 
 
-int quickSort(int numbers[], int array_size) {	// ADD
-	long int count = 0;	// ADD
+unsigned long long quickSort(int numbers[], int array_size) {	// ADD
+	unsigned long long count = 0;	// ADD
 	
 	q_sort(numbers, 0, array_size - 1, &count);	// ADD
 	

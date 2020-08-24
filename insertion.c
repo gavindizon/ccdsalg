@@ -1,7 +1,7 @@
-int insertionSort(int numbers[], int array_size){
+unsigned long long insertionSort(int numbers[], int array_size){
   int i, j, index;
   
-  long int cnt = 0;
+  unsigned long long cnt = 0;
   
   for (i = 1; i < array_size; i++){
     index = numbers[i];
