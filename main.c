@@ -3,11 +3,15 @@
 #define START 1024
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "generator.c"
 #include "bubble.c"
 #include "merge.c"
 #include "heap.c"
 #include "insertion.c"
+#include "selection.c"
+#include "quick.c"
+#include <inttypes.h>
 
 typedef char String[52];
 
@@ -99,14 +103,46 @@ unsigned long long hSortTime(int array[], int size, double *elapsedTime){
 
 }
 
+unsigned long long sSortTime (int toBeSortedData[], int dataSize, double *elapsedTime) {
+	long seconds, nanoseconds;
+	struct timespec begin, end;
+	unsigned long long selectionCount = 0;
+	
+	clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &begin);
+	selectionCount = selectionSort(toBeSortedData, dataSize);
+	clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &end);
+	
+	seconds = end.tv_nsec - begin.tv_nsec;
+	nanoseconds = end.tv_nsec - begin.tv_nsec;
+	*elapsedTime += seconds + nanoseconds * 1e-9;
+	
+	return selectionCount;
+}
+
+unsigned long long qSortTime (int toBeSortedData[], int dataSize, double *elapsedTime) {
+	long seconds, nanoseconds;
+	struct timespec begin, end;
+	unsigned long long quickCount = 0;
+	
+	clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &begin);
+	quickCount = quickSort(toBeSortedData, dataSize);
+	clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &end);
+	
+	seconds = end.tv_nsec - begin.tv_nsec;
+	nanoseconds = end.tv_nsec - begin.tv_nsec;
+	*elapsedTime += seconds + nanoseconds * 1e-9;
+	
+	return quickCount;
+}
+
 int main()
 {
     int *mainData, *tempData, *tempMerge;
     int N = START, M;
     int i;
-    unsigned long long int counters[4]; // change niyo na lang to 6 if pinagsama sama na 
-    double cpuTimes[4] = {0, 0, 0, 0};
-    String filenames[4] = { "results/bubblesort.txt", "results/mergesort.txt","results/insertionsort.txt","results/heapsort.txt" };
+    unsigned long long counters[6]; // change niyo na lang to 6 if pinagsama sama na 
+    double cpuTimes[6] = {0, 0, 0, 0, 0, 0};
+    String filenames[6] = { "results/bubblesort.txt", "results/mergesort.txt","results/insertionsort.txt","results/heapsort.txt", "results/selectionsort.txt", "results/quicksort.txt" };
     FILE *fp;
 
     mainData = malloc(N * sizeof(int));
@@ -131,19 +167,25 @@ int main()
             counters[2] = iSortTime(tempData, N, &cpuTimes[2]);
             CopyData(mainData, tempData, N);
 			counters[3] = hSortTime(tempData, N, &cpuTimes[3]);
+            CopyData(mainData, tempData, N);
+            counters[4] = iSortTime(tempData, N, &cpuTimes[4]);
+            CopyData(mainData, tempData, N);
+			counters[5] = hSortTime(tempData, N, &cpuTimes[5]);
 
         }
         cpuTimes[0] /= 10;
         cpuTimes[1] /= 10;
         cpuTimes[2] /= 10;
         cpuTimes[3] /= 10;
+        cpuTimes[4] /= 10;
+        cpuTimes[5] /= 10;
 
-        for(i = 0; i < 4; i++){
+        for(i = 0; i < 6; i++){
             if((fp = fopen(filenames[i], "a"))!=NULL){
-                fprintf(fp,"N: %d || counter: %lld || Average MET: %f\n", N, counters[i], cpuTimes[i]);
+                fprintf(fp,"N: %d || counter: %llu || Average MET: %lf\n", N, counters[i], cpuTimes[i]);
             }
             else if((fp = fopen(filenames[i], "w"))){
-                fprintf(fp,"N: %d || counter: %lld || Average MET: %f\n", N, counters[i], cpuTimes[i]);
+                fprintf(fp,"N: %d || counter: %llu || Average MET: %lf\n", N, counters[i], cpuTimes[i]);
             }
             fclose(fp);
         }
